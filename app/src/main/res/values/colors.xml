@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bordo">#7E394D</color>
-    <color name="greenmint">#DEF2ED</color>
+    <color name="greenmint">#C2E5D3</color>
     <color name="title_color">#C6124D</color>
+    <color name="red">#FF0000</color>
 </resources>

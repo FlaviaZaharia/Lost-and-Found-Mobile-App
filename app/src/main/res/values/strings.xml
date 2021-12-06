@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name"></string>
-    <string name="app_title">Lost and Found</string>
+    <string name="app_title">Lost &amp; Found</string>
     <string name="welcome">Welcome!</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="loginToRegister">Create new account here</string>
+    <string name="registerToLogin">Already have an account? Log in here</string>
 </resources>
