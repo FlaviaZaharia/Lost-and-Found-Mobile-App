@@ -6,4 +6,19 @@
     <string name="register">Register</string>
     <string name="loginToRegister">Create new account here</string>
     <string name="registerToLogin">Already have an account? Log in here</string>
+    <string name="allPosts">All posts</string>
+    <string name="logout">Log out</string>
+    <string name="found">Found something</string>
+    <string name="lost">Lost something</string>
+    <string name="profilepicture">profilePic</string>
+    <string name="back">back</string>
+    <string name="edit">Edit profile</string>
+    <string name="myposts">My posts</string>
+    <string name="saved">Saved posts</string>
+    <string name="myprofile">My Profile</string>
+    <string name="fname">Enter your first name</string>
+    <string name="lname">Enter your last name</string>
+    <string name="phone">Enter your phone number</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
