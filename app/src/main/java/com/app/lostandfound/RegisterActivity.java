@@ -1,7 +1,9 @@
 package com.app.lostandfound;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.UnderlineSpan;
@@ -68,6 +70,10 @@ private void registerUser(){
     password = passwordTextView.getText().toString();
     firstname=firstnameTextView.getText().toString();
     lastname=lastNameTextView.getText().toString();
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+    SharedPreferences.Editor editor = preferences.edit();
+    editor.putString("email",email);
+    editor.apply();
     if (TextUtils.isEmpty(email)||TextUtils.isEmpty(password)||TextUtils.isEmpty(firstname)||TextUtils.isEmpty(lastname)) {
         errorTextView.setText("Please fill in all the fields");
         return;
@@ -84,7 +90,7 @@ private void registerUser(){
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         addUserToDatabase(email,firstname,lastname);
-                        Intent i=new Intent(RegisterActivity.this,MainActivity.class);
+                        Intent i=new Intent(RegisterActivity.this,MenuActivity.class);
                         startActivity(i);
                     }
                     else

@@ -65,11 +65,11 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent i=new Intent(LoginActivity.this,MainActivity.class);
+                            Intent i=new Intent(LoginActivity.this,MenuActivity.class);
                             startActivity(i);
                         }
                         else{
-                            Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_LONG).show();
+                            errorTextView.setText("Incorrect email or password");
                         }
 
                     }
