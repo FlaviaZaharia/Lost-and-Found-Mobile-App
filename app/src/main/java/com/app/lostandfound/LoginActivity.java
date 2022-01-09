@@ -1,8 +1,10 @@
 package com.app.lostandfound;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.UnderlineSpan;
@@ -56,6 +58,11 @@ public class LoginActivity extends AppCompatActivity {
         String email,password;
         email=emailTextView.getText().toString();
         password=passwordTextView.getText().toString();
+        //write user email to be used by other activities
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("email",email);
+                            editor.apply();
         if(TextUtils.isEmpty(email)||TextUtils.isEmpty(password)){
             errorTextView.setText("Please fill in all the fields");
         return;
@@ -69,7 +76,8 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(i);
                         }
                         else{
-                            Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_LONG).show();
+                            errorTextView.setText("Incorrect email or password");
                         }
 
                     }
