@@ -90,7 +90,7 @@ private void registerUser(){
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         addUserToDatabase(email,firstname,lastname);
-                        Intent i=new Intent(RegisterActivity.this,FormActivity.class);
+                        Intent i=new Intent(RegisterActivity.this,MenuActivity.class);
                         startActivity(i);
                     }
                     else

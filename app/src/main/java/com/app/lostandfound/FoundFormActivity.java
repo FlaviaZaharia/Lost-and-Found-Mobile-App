@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class FormActivity extends AppCompatActivity {
+public class FoundFormActivity extends AppCompatActivity {
     private Button b,open_camera,toMap;
     private static final String TAG="";
     private EditText category,phone,description,name;
@@ -48,7 +48,7 @@ public class FormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form);
+        setContentView(R.layout.activity_form_found);
         category=findViewById(R.id.category);
         name=findViewById(R.id.itemName);
         description=findViewById(R.id.description);
@@ -119,7 +119,7 @@ public class FormActivity extends AppCompatActivity {
         else
         {
             uploadPhotoToFirebase();
-            Intent i=new Intent(FormActivity.this,MainActivity.class);
+            Intent i=new Intent(FoundFormActivity.this,MainActivity.class);
             startActivity(i);
         }
     }
@@ -169,6 +169,7 @@ public class FormActivity extends AppCompatActivity {
         post.put("description",descriptionText);
         post.put("phone",phoneText);
         post.put("image",img);
+        post.put("status","found");
         db.collection("Posts").add(post)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
