@@ -42,6 +42,7 @@
         <activity android:name=".UserProfileActivity"/>
         <activity android:name=".EditProfileActivity"/>
         <activity android:name=".AllPostsActivity"/>
+        <activity android:name=".IndividualPost"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

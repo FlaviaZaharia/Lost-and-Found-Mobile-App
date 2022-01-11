@@ -1,6 +1,7 @@
 package com.app.lostandfound;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +33,17 @@ public class PostsGVAdapter extends ArrayAdapter<PostClass> {
         postTV.setText(postModel.getName());
         ImageView postIV = listitemView.findViewById(R.id.idIVpost);
         Picasso.get().load(postModel.getImage()).into(postIV);
+        listitemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getContext(),IndividualPost.class);
+                i.putExtra("category",postModel.getCategory());
+                i.putExtra("name",postModel.getName());
+                i.putExtra("url",postModel.getImage());
+               getContext().startActivity(i);
 
-
+            }
+        });
         return listitemView;
     }
 

@@ -1,10 +1,14 @@
 package com.app.lostandfound;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,7 @@ import java.util.ArrayList;
 
 public class AllPostsActivity extends AppCompatActivity {
     GridView postsGV;
+    ImageButton b;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
     private static final String TAG="";
     private ArrayList<PostClass> list= new ArrayList<PostClass>();
@@ -26,13 +31,21 @@ public class AllPostsActivity extends AppCompatActivity {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_all_posts);
        postsGV = findViewById(R.id.idGVpost);
+       b=findViewById(R.id.back);
+       b.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent i=new Intent(AllPostsActivity.this,MenuActivity.class);
+               startActivity(i);
+           }
+       });
        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
        String email = preferences.getString("email", "");
-       getPostsFromDB(email);
+       getPostsFromDB();
    }
-   private void  getPostsFromDB(String currentEmail){
+   private void  getPostsFromDB(){
        db.collection("Posts")
-               .whereEqualTo("email",currentEmail)
+               //.whereEqualTo("email",currentEmail)
                .get()
                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                    @Override
