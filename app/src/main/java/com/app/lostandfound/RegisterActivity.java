@@ -70,6 +70,7 @@ private void registerUser(){
     password = passwordTextView.getText().toString();
     firstname=firstnameTextView.getText().toString();
     lastname=lastNameTextView.getText().toString();
+    //store current user email to shared preferences
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
     SharedPreferences.Editor editor = preferences.edit();
     editor.putString("email",email);

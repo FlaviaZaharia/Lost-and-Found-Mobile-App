@@ -37,9 +37,9 @@ import java.util.Map;
 import java.util.UUID;
 
 public class FoundFormActivity extends AppCompatActivity {
-    private Button b,open_camera,toMap;
+    private Button b,open_camera;
     private static final String TAG="";
-    private EditText category,phone,description,name;
+    private EditText category,phone,description,name,location;
     private TextView error;
     private ImageView img;
     private static final int pic_id=123;
@@ -53,10 +53,10 @@ public class FoundFormActivity extends AppCompatActivity {
         name=findViewById(R.id.itemName);
         description=findViewById(R.id.description);
         phone=findViewById(R.id.phoneNr);
+        location=findViewById(R.id.location);
         error=findViewById(R.id.error);
         b=findViewById(R.id.post);
         open_camera=findViewById(R.id.takePic);
-        //toMap=findViewById(R.id.toMap);
         img=findViewById(R.id.imageView);
 
         open_camera.setOnClickListener(new View.OnClickListener(){
@@ -70,13 +70,6 @@ public class FoundFormActivity extends AppCompatActivity {
                 submitPost();
             }
         });
-//        toMap.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i= new Intent(FormActivity.this,MapsActivity.class);
-//                startActivity(i);
-//            }
-//        });
     }
 
     protected void onActivityResult(int requestCode,int resultCode,Intent data) {
@@ -103,12 +96,13 @@ public class FoundFormActivity extends AppCompatActivity {
         return hasImage;
     }
     private void submitPost(){
-        String categoryInput,descriptionInput,phoneInput,nameInput;
+        String categoryInput,descriptionInput,phoneInput,nameInput,locationInput;
         categoryInput=category.getText().toString();
         nameInput=name.getText().toString();
         descriptionInput=description.getText().toString();
         phoneInput= phone.getText().toString();
-        if(TextUtils.isEmpty(categoryInput)|| TextUtils.isEmpty(nameInput)||TextUtils.isEmpty(descriptionInput)||TextUtils.isEmpty(phoneInput)) {
+        locationInput=location.getText().toString();
+        if(TextUtils.isEmpty(categoryInput)|| TextUtils.isEmpty(nameInput)||TextUtils.isEmpty(descriptionInput)||TextUtils.isEmpty(phoneInput)||TextUtils.isEmpty(locationInput)) {
             error.setText("Please fill in all the fields");
             return;
         }
@@ -119,7 +113,7 @@ public class FoundFormActivity extends AppCompatActivity {
         else
         {
             uploadPhotoToFirebase();
-            Intent i=new Intent(FoundFormActivity.this,MainActivity.class);
+            Intent i=new Intent(FoundFormActivity.this,MenuActivity.class);
             startActivity(i);
         }
     }
@@ -154,7 +148,7 @@ public class FoundFormActivity extends AppCompatActivity {
     }
 
     private void addPostToDatabase(String img){
-        String categoryText,nameText,descriptionText,phoneText;
+        String categoryText,nameText,descriptionText,phoneText,locationText;
         categoryText=category.getText().toString();
         //get user email
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -162,6 +156,7 @@ public class FoundFormActivity extends AppCompatActivity {
         nameText=name.getText().toString();
         descriptionText=description.getText().toString();
         phoneText=phone.getText().toString();
+        locationText=location.getText().toString();
         Map<String,Object> post=new HashMap<>();
         post.put("email",email);
         post.put("category",categoryText);
@@ -170,6 +165,7 @@ public class FoundFormActivity extends AppCompatActivity {
         post.put("phone",phoneText);
         post.put("image",img);
         post.put("status","found");
+        post.put("location",locationText);
         db.collection("Posts").add(post)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

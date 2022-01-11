@@ -39,7 +39,7 @@ import java.util.UUID;
 public class LostFormActivity extends AppCompatActivity {
     private Button b;
     private static final String TAG="";
-    private EditText category,phone,description,name;
+    private EditText category,phone,description,name,location;
     private TextView error;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
@@ -50,6 +50,7 @@ public class LostFormActivity extends AppCompatActivity {
         name = findViewById(R.id.itemName);
         description = findViewById(R.id.description);
         phone = findViewById(R.id.phoneNr);
+        location=findViewById(R.id.location);
         error = findViewById(R.id.error);
         b = findViewById(R.id.post);
 
@@ -61,26 +62,27 @@ public class LostFormActivity extends AppCompatActivity {
     }
 
     private void submitPost(){
-        String categoryInput,descriptionInput,phoneInput,nameInput;
+        String categoryInput,descriptionInput,phoneInput,nameInput,locationInput;
         categoryInput=category.getText().toString();
         nameInput=name.getText().toString();
         descriptionInput=description.getText().toString();
         phoneInput= phone.getText().toString();
-        if(TextUtils.isEmpty(categoryInput)|| TextUtils.isEmpty(nameInput)||TextUtils.isEmpty(descriptionInput)||TextUtils.isEmpty(phoneInput)) {
+        locationInput=location.getText().toString();
+        if(TextUtils.isEmpty(categoryInput)|| TextUtils.isEmpty(nameInput)||TextUtils.isEmpty(descriptionInput)||TextUtils.isEmpty(phoneInput)||TextUtils.isEmpty(locationInput)) {
             error.setText("Please fill in all the fields");
             return;
         }
         else
         {
             addPostToDatabase();
-            Intent i=new Intent(LostFormActivity.this,MainActivity.class);
+            Intent i=new Intent(LostFormActivity.this,MenuActivity.class);
             startActivity(i);
         }
     }
 
 
     private void addPostToDatabase(){
-        String categoryText,nameText,descriptionText,phoneText;
+        String categoryText,nameText,descriptionText,phoneText,locationText;
         categoryText=category.getText().toString();
         //get user email
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -88,6 +90,7 @@ public class LostFormActivity extends AppCompatActivity {
         nameText=name.getText().toString();
         descriptionText=description.getText().toString();
         phoneText=phone.getText().toString();
+        locationText=location.getText().toString();
         Map<String,Object> post=new HashMap<>();
         post.put("email",email);
         post.put("category",categoryText);
@@ -95,6 +98,8 @@ public class LostFormActivity extends AppCompatActivity {
         post.put("description",descriptionText);
         post.put("phone",phoneText);
         post.put("status","lost");
+        post.put("image","");
+        post.put("location",locationText);
         db.collection("Posts").add(post)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

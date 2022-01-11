@@ -46,6 +46,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MenuActivity.this,AllPostsActivity.class);
+                startActivity(i);
+            }
+        });
 
 
     }

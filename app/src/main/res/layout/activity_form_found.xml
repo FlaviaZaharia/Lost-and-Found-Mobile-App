@@ -60,6 +60,16 @@
             android:paddingBottom="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"/>
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Approximate Location"
+            android:inputType="text"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,19 +100,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-<!--        <Button-->
-<!--            android:id="@+id/toMap"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:backgroundTint="@color/bordo"-->
-<!--            android:padding="20dp"-->
-<!--            android:text="Add a location"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
-        />
+
 
         <TextView
             android:id="@+id/error"

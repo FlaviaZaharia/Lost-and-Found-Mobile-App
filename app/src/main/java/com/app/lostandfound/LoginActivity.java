@@ -1,8 +1,10 @@
 package com.app.lostandfound;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.UnderlineSpan;
@@ -60,6 +62,11 @@ public class LoginActivity extends AppCompatActivity {
             errorTextView.setText("Please fill in all the fields");
         return;
         }
+        //store current user email to sharedpreferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("email",email);
+        editor.apply();
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(
                 new OnCompleteListener<AuthResult>() {
                     @Override
