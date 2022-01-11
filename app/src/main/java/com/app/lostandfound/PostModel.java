@@ -1,17 +1,17 @@
 package com.app.lostandfound;
 
 public class PostModel {
-    private int image;
-    private String title,category,description;
 
-    PostModel(String description,String title,String category,int image) {
+    private String title,category,description,image;
+
+    PostModel(String description,String title,String category, String image) {
         this.description = description;
         this.title=title;
         this.category=category;
         this.image=image;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -25,5 +25,21 @@ public class PostModel {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
