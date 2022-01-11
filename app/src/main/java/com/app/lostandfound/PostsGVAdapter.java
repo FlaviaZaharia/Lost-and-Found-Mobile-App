@@ -32,6 +32,7 @@ public class PostsGVAdapter extends ArrayAdapter<PostClass> {
         TextView postTV = listitemView.findViewById(R.id.idTVpost);
         postTV.setText(postModel.getName());
         ImageView postIV = listitemView.findViewById(R.id.idIVpost);
+        if(!postModel.getImage().equals(""))
         Picasso.get().load(postModel.getImage()).into(postIV);
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,9 @@ public class PostsGVAdapter extends ArrayAdapter<PostClass> {
                 i.putExtra("category",postModel.getCategory());
                 i.putExtra("name",postModel.getName());
                 i.putExtra("url",postModel.getImage());
+                i.putExtra("status",postModel.getStatus());
+                i.putExtra("description",postModel.getDescription());
+                i.putExtra("location",postModel.getLocation());
                getContext().startActivity(i);
 
             }

@@ -58,7 +58,9 @@ public class AllPostsActivity extends AppCompatActivity {
                                String name= document.getString("name");
                                String desc= document.getString("name");
                                String phone= document.getString("phone");
-                               list.add(new PostClass(categ,url,name,desc,phone));
+                               String location=document.getString("location");
+                               String status= document.getString("status");
+                               list.add(new PostClass(categ,url,name,desc,phone,location,status));
                            }
                            PostsGVAdapter adapter = new PostsGVAdapter(   AllPostsActivity.this,list);
                            postsGV.setAdapter(adapter);

@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.squareup.picasso.Picasso;
 
 public class IndividualPost extends AppCompatActivity {
-    TextView category,categoryValue,name,nameValue;
+    TextView category,categoryValue,name,nameValue,locationValue,location;
     ImageView img;
     ImageButton b;
     @Override
@@ -23,6 +23,8 @@ public class IndividualPost extends AppCompatActivity {
         setContentView(R.layout.activity_individual_post);
         category=findViewById(R.id.textViewcategory);
         name=findViewById(R.id.textViewname);
+        location=findViewById(R.id.textViewlocation);
+        locationValue=findViewById(R.id.locationValue);
         categoryValue=findViewById(R.id.categoryValue);
         nameValue=findViewById(R.id.nameValue);
         img=findViewById(R.id.imagePic);
@@ -32,7 +34,10 @@ public class IndividualPost extends AppCompatActivity {
         categoryValue.setText(aux);
         aux=i.getStringExtra("name");
         nameValue.setText(aux);
+        aux=i.getStringExtra("location");
+        locationValue.setText(aux);
         aux=i.getStringExtra("url");
+        if(!aux.equals(""))
         Picasso.get().load(aux).into(img);
         b.setOnClickListener(new View.OnClickListener() {
             @Override

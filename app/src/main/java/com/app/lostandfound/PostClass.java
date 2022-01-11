@@ -6,13 +6,17 @@ public class PostClass {
     String description;
     String name;
     String phone;
+    String location;
+    String status;
 
-    public PostClass(String category, String image, String description, String name, String phone) {
+    public PostClass(String category, String image, String description, String name, String phone, String location, String status) {
         this.category = category;
         this.image = image;
         this.description = description;
         this.name = name;
         this.phone = phone;
+        this.location = location;
+        this.status = status;
     }
 
     public String getCategory() {
@@ -53,5 +57,21 @@ public class PostClass {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

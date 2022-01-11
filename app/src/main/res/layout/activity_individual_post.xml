@@ -62,8 +62,8 @@
         android:id="@+id/categoryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="48dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textViewcategory"
         app:layout_constraintTop_toBottomOf="@+id/imagePic" />
@@ -82,11 +82,31 @@
         android:id="@+id/nameValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="20dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textViewname"
         app:layout_constraintTop_toBottomOf="@+id/categoryValue" />
+
+    <TextView
+        android:id="@+id/textViewlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="19dp"
+        android:text="Approximate Location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewname" />
+
+    <TextView
+        android:id="@+id/locationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="124dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewlocation"
+        app:layout_constraintTop_toBottomOf="@+id/imagePic" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
