@@ -39,8 +39,8 @@ public class AllPostsActivity extends AppCompatActivity {
                startActivity(i);
            }
        });
-       SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-       String email = preferences.getString("email", "");
+//       SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+//       String email = preferences.getString("email", "");
        getPostsFromDB();
    }
    private void  getPostsFromDB(){
@@ -60,7 +60,8 @@ public class AllPostsActivity extends AppCompatActivity {
                                String phone= document.getString("phone");
                                String location=document.getString("location");
                                String status= document.getString("status");
-                               list.add(new PostClass(categ,url,name,desc,phone,location,status));
+                               String email=document.getString("email");
+                               list.add(new PostClass(categ,url,name,desc,phone,location,status,email));
                            }
                            PostsGVAdapter adapter = new PostsGVAdapter(   AllPostsActivity.this,list);
                            postsGV.setAdapter(adapter);
