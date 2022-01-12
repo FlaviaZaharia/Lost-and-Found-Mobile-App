@@ -32,6 +32,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -166,6 +167,7 @@ public class FoundFormActivity extends AppCompatActivity {
         post.put("image",img);
         post.put("status","found");
         post.put("location",locationText);
+        post.put("desc_requests", Arrays.asList());
         db.collection("Posts").add(post)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

@@ -19,7 +19,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AllPostsActivity extends AppCompatActivity {
     GridView postsGV;
@@ -60,7 +62,10 @@ public class AllPostsActivity extends AppCompatActivity {
                                String phone= document.getString("phone");
                                String location=document.getString("location");
                                String status= document.getString("status");
-                               list.add(new PostClass(categ,url,name,desc,phone,location,status));
+                               Object descs=document.getData();
+                               ArrayList<String> group = (ArrayList<String>) document.get("desc_requests");
+                               String uid=document.getId();
+                               list.add(new PostClass(categ,url,name,desc,phone,location,status,group,uid));
                            }
                            PostsGVAdapter adapter = new PostsGVAdapter(   AllPostsActivity.this,list);
                            postsGV.setAdapter(adapter);

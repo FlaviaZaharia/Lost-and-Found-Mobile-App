@@ -2,6 +2,7 @@ package com.app.lostandfound;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class PostsGVAdapter extends ArrayAdapter<PostClass> {
+    private static final String TAG ="" ;
+
     public PostsGVAdapter(@NonNull Context context, ArrayList<PostClass> postModelArrayList) {
         super(context, 0, postModelArrayList);
     }
@@ -37,13 +40,15 @@ public class PostsGVAdapter extends ArrayAdapter<PostClass> {
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getContext(),IndividualPost.class);
+                Intent i=new Intent(getContext(),IndividualFound.class);
                 i.putExtra("category",postModel.getCategory());
                 i.putExtra("name",postModel.getName());
                 i.putExtra("url",postModel.getImage());
                 i.putExtra("status",postModel.getStatus());
                 i.putExtra("description",postModel.getDescription());
                 i.putExtra("location",postModel.getLocation());
+                i.putExtra("d",postModel.getDescriptions());
+                i.putExtra("uid",postModel.getUid());
                getContext().startActivity(i);
 
             }

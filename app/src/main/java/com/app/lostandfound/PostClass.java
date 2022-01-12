@@ -1,15 +1,21 @@
 package com.app.lostandfound;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PostClass {
     String category;
+    String uid;
     String image;
     String description;
     String name;
     String phone;
     String location;
     String status;
+    ArrayList<String>descriptions;
 
-    public PostClass(String category, String image, String description, String name, String phone, String location, String status) {
+    public PostClass(String category, String image, String description, String name, String phone, String location, String status,ArrayList<String> descriptions,String uid) {
         this.category = category;
         this.image = image;
         this.description = description;
@@ -17,6 +23,8 @@ public class PostClass {
         this.phone = phone;
         this.location = location;
         this.status = status;
+        this.descriptions=descriptions;
+        this.uid=uid;
     }
 
     public String getCategory() {
@@ -73,5 +81,21 @@ public class PostClass {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ArrayList<String> getDescriptions() {
+        return descriptions;
+    }
+
+    public void setDescriptions(ArrayList<String> descriptions) {
+        this.descriptions = descriptions;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
