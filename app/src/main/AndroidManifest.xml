@@ -19,9 +19,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LostAndFound">
         <activity
-            android:name=".IndividualFoundActivity"
-            android:exported="false" />
-        <activity
             android:name=".MyPostsActivity"
             android:exported="false" />
         <!--
