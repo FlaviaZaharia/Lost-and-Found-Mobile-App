@@ -60,6 +60,16 @@
             android:paddingTop="20dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp" />
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Approximate Location"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp" />
 
 
         <TextView

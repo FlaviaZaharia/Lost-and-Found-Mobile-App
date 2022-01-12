@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             errorTextView.setText("Please fill in all the fields");
         return;
         }
+        //store current user email to sharedpreferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("email",email);
