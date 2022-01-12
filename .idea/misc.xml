@@ -11,10 +11,13 @@
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font-v26/lobster_fam.xml" value="0.1" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font/.xml" value="0.396875" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font/lobster.xml" value="0.4091796875" />
+        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_add_description.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_all_posts.xml" value="0.25" />
+        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_edit_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_form.xml" value="0.22604166666666667" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_form_found.xml" value="0.30625" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_form_lost.xml" value="0.29791666666666666" />
+        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_individual_found.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_individual_post.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_lost_found_form.xml" value="0.246875" />
@@ -23,6 +26,7 @@
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_maps.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_menu.xml" value="0.2552083333333333" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_register.xml" value="0.26979166666666665" />
+        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/card_view.xml" value="0.2630208333333333" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/image_view_border.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/part.xml" value="0.22083333333333333" />
       </map>
