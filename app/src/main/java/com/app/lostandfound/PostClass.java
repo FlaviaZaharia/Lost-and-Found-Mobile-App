@@ -8,8 +8,9 @@ public class PostClass {
     String phone;
     String location;
     String status;
+    String email;
 
-    public PostClass(String category, String image, String description, String name, String phone, String location, String status) {
+    public PostClass(String category, String image, String description, String name, String phone, String location, String status, String email) {
         this.category = category;
         this.image = image;
         this.description = description;
@@ -17,10 +18,15 @@ public class PostClass {
         this.phone = phone;
         this.location = location;
         this.status = status;
+        this.email=email;
     }
 
     public String getCategory() {
         return category;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setCategory(String category) {

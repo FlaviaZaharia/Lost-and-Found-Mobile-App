@@ -37,14 +37,28 @@ public class PostsGVAdapter extends ArrayAdapter<PostClass> {
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getContext(),IndividualPost.class);
-                i.putExtra("category",postModel.getCategory());
-                i.putExtra("name",postModel.getName());
-                i.putExtra("url",postModel.getImage());
-                i.putExtra("status",postModel.getStatus());
-                i.putExtra("description",postModel.getDescription());
-                i.putExtra("location",postModel.getLocation());
-               getContext().startActivity(i);
+                if(postModel.getStatus().equals("lost")) {
+                    Intent i = new Intent(getContext(), IndividualPost.class);
+                    i.putExtra("category", postModel.getCategory());
+                    i.putExtra("name", postModel.getName());
+                    i.putExtra("url", postModel.getImage());
+                    i.putExtra("status", postModel.getStatus());
+                    i.putExtra("description", postModel.getDescription());
+                    i.putExtra("location", postModel.getLocation());
+                    i.putExtra("email", postModel.getEmail());
+                    getContext().startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(getContext(), IndividualFoundActivity.class);
+                    i.putExtra("category", postModel.getCategory());
+                    i.putExtra("name", postModel.getName());
+                    i.putExtra("url", postModel.getImage());
+                    i.putExtra("status", postModel.getStatus());
+                    i.putExtra("description", postModel.getDescription());
+                    i.putExtra("location", postModel.getLocation());
+                    i.putExtra("email", postModel.getEmail());
+                    getContext().startActivity(i);
+                }
 
             }
         });
