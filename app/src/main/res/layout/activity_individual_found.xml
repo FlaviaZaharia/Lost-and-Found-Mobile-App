@@ -108,5 +108,16 @@
         app:layout_constraintStart_toEndOf="@+id/textViewlocation"
         app:layout_constraintTop_toBottomOf="@+id/imagePic" />
 
+    <Button
+        android:id="@+id/toDescription"
+        android:layout_width="294dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@color/bordo"
+        android:text="Seems familiar? Find out more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

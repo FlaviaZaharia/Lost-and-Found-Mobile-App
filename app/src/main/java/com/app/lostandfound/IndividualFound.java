@@ -13,14 +13,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
-public class IndividualPost extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class IndividualFound extends AppCompatActivity {
     TextView category,categoryValue,name,nameValue,locationValue,location;
     ImageView img;
     ImageButton b;
+    Button toDescription;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_individual_post);
+        setContentView(R.layout.activity_individual_found);
         category=findViewById(R.id.textViewcategory);
         name=findViewById(R.id.textViewname);
         location=findViewById(R.id.textViewlocation);
@@ -29,6 +32,7 @@ public class IndividualPost extends AppCompatActivity {
         nameValue=findViewById(R.id.nameValue);
         img=findViewById(R.id.imagePic);
         b=findViewById(R.id.back);
+        toDescription=findViewById(R.id.toDescription);
         Intent i=getIntent();
         String aux=i.getStringExtra("category");
         categoryValue.setText(aux);
@@ -36,13 +40,26 @@ public class IndividualPost extends AppCompatActivity {
         nameValue.setText(aux);
         aux=i.getStringExtra("location");
         locationValue.setText(aux);
-        aux=i.getStringExtra("url");
-        if(!aux.equals(""))
-        Picasso.get().load(aux).into(img);
+        String aux1=i.getStringExtra("url");
+        if(!aux1.equals(""))
+            Picasso.get().load(aux1).into(img);
+
+        ArrayList<String> descs=i.getStringArrayListExtra("d");
+        String UID=i.getStringExtra("uid");
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(IndividualPost.this,AllPostsActivity.class);
+                Intent i=new Intent(IndividualFound.this,AllPostsActivity.class);
+                startActivity(i);
+            }
+        });
+        toDescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(IndividualFound.this,AddDescription.class);
+                i.putExtra("d",descs);
+                i.putExtra("uid",UID);
+                i.putExtra("url",aux1);
                 startActivity(i);
             }
         });
