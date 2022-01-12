@@ -36,7 +36,8 @@ public class Adapter extends ArrayAdapter<PostModel> {
         TextView desc = listitemView.findViewById(R.id.descriptionPost);
         desc.setText(postModel.getDescription());
         ImageView image = listitemView.findViewById(R.id.imageView1);
-        Picasso.get().load(postModel.getImage()).into(image);
+        if(!postModel.getImage().equals(""))
+            Picasso.get().load(postModel.getImage()).into(image);
 
 
         return listitemView;

@@ -40,8 +40,6 @@ public class MyPostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_posts);
         back=findViewById(R.id.back3);
-        filter1=findViewById(R.id.filter1);
-        filter2=findViewById(R.id.filter2);
         container=findViewById(R.id.container);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         email = preferences.getString("email", "");
@@ -52,19 +50,6 @@ public class MyPostsActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-//        filter1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                lost(email);
-//
-//            }
-//        });
-//        filter2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                found(email);
-//            }
-//        });
         initData(email);
 
     }
@@ -95,58 +80,5 @@ public class MyPostsActivity extends AppCompatActivity {
                     );
     }
 
-    private void lost(String email) {
-        db.collection("Posts")
-                .whereEqualTo("email", email)
-                .whereEqualTo("status","lost")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                String title=document.get("name").toString();
-                                String desc=document.get("description").toString();
-                                String categ=document.get("category").toString();
-                                String img=document.get("image").toString();
-                                posts.add(new PostModel(desc,title,categ,img));
-
-                            }
-                            Adapter adapter=new Adapter(MyPostsActivity.this,posts);
-                            container.setAdapter(adapter);
-
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        } } }
-                );
-    }
-
-    private void found(String email) {
-        db.collection("Posts")
-                .whereEqualTo("email", email)
-                .whereEqualTo("status","found")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                String title=document.get("name").toString();
-                                String desc=document.get("description").toString();
-                                String categ=document.get("category").toString();
-                                String img=document.get("image").toString();
-                                posts.add(new PostModel(desc,title,categ,img));
-
-                            }
-                            Adapter adapter=new Adapter(MyPostsActivity.this,posts);
-                            container.setAdapter(adapter);
-
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        } } }
-                );
-    }
 
 }
