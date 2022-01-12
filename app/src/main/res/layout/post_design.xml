@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#ffffff">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#000000"
+                app:srcCompat="@mipmap/ic_launcher"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+<!--        <TextView-->
+<!--            android:id="@+id/datePost"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginLeft="80dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_toRightOf="@+id/titlePost"-->
+<!--            android:textSize="14sp"></TextView>-->
+
+        <TextView
+            android:id="@+id/titlePost"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+        <TextView
+            android:id="@+id/categoryPost"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_below="@+id/titlePost"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/descriptionPost"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/categoryPost"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:textColor="#000000"
+            android:textSize="16sp"></TextView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

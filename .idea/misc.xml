@@ -5,9 +5,7 @@
       <map>
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/drawable/email.xml" value="0.26666666666666666" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/drawable/image_view_border.xml" value="0.37864583333333335" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/drawable/rounded_corners.xml" value="0.26666666666666666" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/drawable/search_shape.xml" value="0.38697916666666665" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font-v26/lobster_fam.xml" value="0.1" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font/.xml" value="0.396875" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/font/lobster.xml" value="0.4091796875" />
@@ -17,12 +15,20 @@
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_form_lost.xml" value="0.29791666666666666" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_individual_post.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_lost_found_form.xml" value="0.246875" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_main.xml" value="0.2557291666666667" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_map.xml" value="0.36666666666666664" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_maps.xml" value="0.36666666666666664" />
-        <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_menu.xml" value="0.2552083333333333" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/activity_register.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1515625" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1515625" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/drawable/person.xml" value="0.1515625" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/font/montserrat.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_edit_profile.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_menu.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_my_posts.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/activity_user_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/source/repos/Lost-and-Found-Mobile-App/app/src/main/res/layout/post_design.xml" value="0.264" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/image_view_border.xml" value="0.36666666666666664" />
         <entry key="..\:/Anul 4/Lost-and-Found/app/src/main/res/layout/part.xml" value="0.22083333333333333" />
       </map>

@@ -18,6 +18,7 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         b1=findViewById(R.id.edit);
+        b2=findViewById(R.id.myposts);
         back=findViewById(R.id.back2);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,5 +34,13 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         }
         );
+        b2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent i=new Intent(UserProfileActivity.this,MyPostsActivity.class);
+                startActivity(i);
+            }
+        }
+        );
+
     }
 }
